@@ -984,37 +984,34 @@ class BirthdayApp {
                 // Activate spotlight
                 document.getElementById('spotlight').classList.add('active');
 
-                // Show teaser "Je gaat naar..."
+                // Step 1: Show teaser "Je gaat naar..." + start drumroll
                 setTimeout(() => {
                     document.getElementById('reveal-teaser').classList.add('visible');
                     this.soundManager.playDrumroll();
                 }, 300);
 
-                // Show HANS TEEUWEN header after drumroll
+                // Step 2: After drumroll - show HANS TEEUWEN + ticket + confetti together
                 setTimeout(() => {
+                    // Show HANS TEEUWEN
                     document.querySelector('.reveal-header').classList.add('visible');
-                    this.soundManager.playChampagne();
 
-                    // Confetti burst
-                    setTimeout(() => {
-                        this.confetti.burst(window.innerWidth / 2, window.innerHeight / 3, 100);
-                    }, 200);
-                }, 3000);
-
-                // Show ticket
-                setTimeout(() => {
+                    // Show ticket
                     document.getElementById('ticket').classList.add('visible');
+
+                    // Champagne + confetti
+                    this.soundManager.playChampagne();
+                    this.confetti.burst(window.innerWidth / 2, window.innerHeight / 3, 100);
 
                     // Confetti rain
                     setTimeout(() => {
                         this.confetti.rain(5000);
                     }, 300);
-                }, 3800);
+                }, 3200);
 
-                // Show footer
+                // Step 3: Show footer
                 setTimeout(() => {
                     document.querySelector('.reveal-footer').classList.add('visible');
-                }, 4500);
+                }, 4000);
             }, 400);
         });
     }
