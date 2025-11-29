@@ -955,6 +955,21 @@ body {
 }
 
 /* Ticket Styling */
+.ticket-link {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.ticket-link:hover {
+    transform: scale(1.02);
+}
+
+.ticket-link:active {
+    transform: scale(0.98);
+}
+
 .ticket {
     background: var(--ticket-gradient);
     border-radius: 16px;
